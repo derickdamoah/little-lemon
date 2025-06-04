@@ -1,38 +1,282 @@
-.App {
+body {
+  min-width: 350px;
+  background-color: white;
+}
+
+/* Nav Section */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.hamburger-menu,
+.close-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.side-menu {
   text-align: center;
+  display: none;
+  width: 100%;
+  background-color: #fff;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.side-menu.open {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.side-menu li {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  list-style: none;
+}
+
+.side-menu li a {
+  text-decoration: none;
+  color: #000;
+}
+
+ .material-symbols-outlined {
+   font-variation-settings:
+           'FILL' 0,
+           'wght' 400,
+           'GRAD' 0,
+           'opsz' 48;
+ }
+
+/* Banner Section */
+.banner {
+  background-color: #475c55;
+  color: white;
+  text-align: center;
+  padding: 30px 0 0;
+}
+
+.banner h1, p {
+  margin: 20px;
+}
+
+.banner button {
+  background-color: #eac518;
+  border-radius: 30px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  color: #333333;
+}
+
+.banner article {
+  background-color: white;
+  padding: 30px 0;
+}
+
+.banner-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  display: block;
+  margin: auto;
+}
+
+/* Menu Section */
+h2 {
+    text-align: center;
+    color: #333333;
+    margin: 20px 0;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  background-color: #475c55;
+}
+
+.menu-card img {
+  width: 95%;
+  height: 70%;
+  display: block;
+  margin: 15px auto;
+  border-radius: 20px;
+}
+
+.menu-card button {
+    background-color: #eac518;
+    border-radius: 30px;
+    border: none;
+    margin: 20px 30%;
+    padding: 10px 20px;
+    color: #333333;
+}
+
+.menu-card h3, .menu-card p {
+  color: white;
+  margin:5px 15px;
+}
+
+/* Testimonials Section */
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.testimonial-card {
+  border-radius: 10px;
+  background-color: #edefee;
+  width: 90%;
+  padding: 10px 0;
+  margin: 10px auto;
+}
+
+/* About us Section */
+.about-us {
+  background-color: #eac518;
+  color: #333333;
+  padding: 20px;
+  position: relative;
+  min-height: 340px;
+  margin-top: 15px;
+}
+
+.about-us h2 {
+  margin: 0 20px;
+  text-align: left;
+}
+
+.about-us img {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Footer */
+footer{
+  display: block;
+  bottom: 10px;
+  padding: 20px;
+  text-align: center;
+  background-color: #475c55;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* Styles for larger screens (more than 600px) */
+@media only screen and (min-width: 600px) {
+  .hamburger-menu {
+    display: none;
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  menu {
+    display: flex;
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
+
+  .side-menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    height: auto;
+    width: 70%;
+    box-shadow: none;
+    padding: 0;
   }
+
+  .side-menu li {
+    margin: 0 5px;
+  }
+
+  /* Menu Section */
+  section.menu {
+    text-align: center;
+    padding: 0;
+  }
+
+  .menu h2 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .menu-card {
+    display: inline-block;
+    width: calc(33.33% - 10px);
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .menu-card img {
+    height: 200px;
+    width: 95%;
+  }
+
+  .menu-card button {
+    width: 50%;
+    margin: 20px 15px;
+  }
+
+  /* Testimonials Section */
+  .testimonial-card {
+    width: calc(50% - 20px);
+    margin: 0;
+  }
+
+  /* About us section */
+  .about-us{
+    padding: 80px 0 20px;
+  }
+  .about-us h2 {
+    margin: 0 20px;
+  }
+
+  .about-us p {
+    max-width: calc(100% - 380px);
+  }
+
+  .about-us img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+  }
+
+  /* Banner Section  */
+  .banner {
+    position: relative;
+    min-height: 300px;
+    padding-bottom: 20px;
+  }
+
+  .banner p, .banner h1{
+    max-width: calc(100% - 380px);
+    text-align: left;
+    display: block;
+  }
+
+  .banner button{
+    margin: 40px 20px;
+    display: block;
+  }
+
+  .banner > article {
+    background-color: #475c55;
+    position: absolute;
+    max-height: 200px;
+    top: 0;
+    right: 20px;
+    margin: 0;
+  }
+
 }
