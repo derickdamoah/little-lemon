@@ -1,10 +1,10 @@
-import greekSalad from '../assets/greek salad.jpg';
-import bannerImage from '../assets/greek-salad-1.webp';
-import bruschetta from '../assets/bruschetta.webp';
-import lemonDessert from '../assets/lemon dessert.jpg';
-import marioAndAdrian from '../assets/Mario and Adrian A.jpg';
-function Main(){
-    return(
+import bannerImage from "../../assets/greek-salad-1.webp";
+import greekSalad from "../../assets/greek salad.jpg";
+import bruschetta from "../../assets/bruschetta.webp";
+import lemonDessert from "../../assets/lemon dessert.jpg";
+import marioAndAdrian from "../../assets/Mario and Adrian A.jpg";
+export default function HomePage(){
+    return (
         <main>
             {/* Banner Section */}
             <section className="banner">
@@ -12,7 +12,7 @@ function Main(){
                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus
                     ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium
                     tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
-                <button>Reserve a Table</button>
+                <button><a href="/reservations">Reserve a Table</a></button>
                 <article>
                     <img src={bannerImage} alt="greek salad" className="banner-image"/>
                 </article>
@@ -21,25 +21,43 @@ function Main(){
             <section className="menu">
                 <h2>Our Menu</h2>
                 <article className="menu-card">
-                    <img src={greekSalad} alt="greek salad"/>
-                    <h3>Greek Salad</h3>
-                    <p><strong>$9.99</strong></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
-                    <button>Order now</button>
+                    <form action="/order" method="get">
+                        <input type="hidden" name="image" value={greekSalad}/>
+                        <input type="hidden" name="title" value="Greek Salad"/>
+                        <input type="hidden" name="price" value="$9.99"/>
+                        <img src={greekSalad} alt="greek salad"/>
+                        <h3>Greek Salad</h3>
+                        <p><strong>$9.99</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing
+                            elit quisque faucibus.</p>
+                        <button type="submit">Order now</button>
+                    </form>
                 </article>
                 <article className="menu-card">
-                    <img src={bruschetta} alt="Bruschetta"/>
-                    <h3>Bruschetta</h3>
-                    <p><strong>$12.99</strong></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
-                    <button>Order now</button>
+                    <form action="/order" method="get">
+                        <input type="hidden" name="image" value={bruschetta}/>
+                        <input type="hidden" name="title" value="Bruschetta"/>
+                        <input type="hidden" name="price" value="$12.99"/>
+                        <img src={bruschetta} alt="Bruschetta"/>
+                        <h3>Bruschetta</h3>
+                        <p><strong>$12.99</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing
+                            elit quisque faucibus.</p>
+                        <button type="submit">Order now</button>
+                    </form>
                 </article>
                 <article className="menu-card">
-                    <img src={lemonDessert} alt="lemon dessert"/>
-                    <h3>Lemon Dessert</h3>
-                    <p><strong>$4.99</strong></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.</p>
-                    <button>Order now</button>
+                    <form action="/order" method="get">
+                        <input type="hidden" name="image" value={lemonDessert}/>
+                        <input type="hidden" name="title" value="Lemon Dessert"/>
+                        <input type="hidden" name="price" value="$4.99"/>
+                        <img src={lemonDessert} alt="lemon dessert"/>
+                        <h3>Lemon Dessert</h3>
+                        <p><strong>$4.99</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing
+                            elit quisque faucibus.</p>
+                        <button type="submit">Order now</button>
+                    </form>
                 </article>
             </section>
             {/* Testimonial Section */}
@@ -80,5 +98,3 @@ function Main(){
         </main>
     );
 }
-
-export default Main;

@@ -76,6 +76,11 @@ nav {
   color: #333333;
 }
 
+.banner button a {
+    text-decoration: none;
+    color: #333333;
+}
+
 .banner article {
   background-color: white;
   padding: 30px 0;
@@ -142,8 +147,8 @@ h2 {
   margin: 10px auto;
 }
 
-/* About us Section */
-.about-us {
+/* About us and Contact us Section */
+.about-us, .contact-us {
   background-color: #eac518;
   color: #333333;
   padding: 20px;
@@ -152,12 +157,18 @@ h2 {
   margin-top: 15px;
 }
 
-.about-us h2 {
+.about-us h2, .contact-us h2 {
   margin: 0 20px;
   text-align: left;
 }
 
-.about-us img {
+.about-us img, .contact-us img {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 20px auto;
+}
+.where-to-find-us iframe {
   width: 300px;
   height: 300px;
   display: block;
@@ -172,6 +183,139 @@ footer{
   text-align: center;
   background-color: #475c55;
   color: white;
+}
+
+/* Reservations page*/
+.reservations-page {
+  padding: 20px;
+  background-color: #eac518;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.reservations-page form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.reservations-page label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.reservations-page input, .reservations-page select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reservations-page button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #475c55;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reservations-page button:hover {
+  background-color: #3a4b45;
+}
+
+/* Confirmation Page */
+.confirmation-page, .order-confirmation-page {
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #eac518;
+  border-radius: 20px;
+}
+
+.order-confirmation-page img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.confirmation-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.confirmation-page li {
+  margin: 10px 0;
+}
+
+/* Order page */
+.order-page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #eac518;
+}
+
+.order-page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.order-page img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.order-page h3 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.order-page label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.order-page input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.order-page button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #475c55;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.order-page button:hover {
+  background-color: #3a4b45;
 }
 
 /* Styles for larger screens (more than 600px) */
@@ -234,7 +378,7 @@ footer{
   }
 
   /* About us section */
-  .about-us{
+  .about-us, .contact-us{
     padding: 80px 0 20px;
   }
   .about-us h2 {
@@ -277,6 +421,45 @@ footer{
     top: 0;
     right: 20px;
     margin: 0;
+  }
+
+}
+
+@media only screen and (min-width: 800px) {
+  /* Contact Us */
+  .contact-us p {
+    max-width: calc(100% - 500px);
+    text-align: justify;
+
+  }
+  .contact-us img {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 400px;
+    height: 350px;
+  }
+
+  .where-to-find-us {
+    margin-top: calc(20%);
+  }
+
+  .where-to-find-us h2 {
+    text-align: right;
+    margin-right: 50px;
+  }
+  .where-to-find-us p {
+    text-align: justify;
+    margin-left: calc(0% + 450px);
+    margin-right: 50px;
+  }
+
+  .where-to-find-us iframe {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 400px;
+    height: 350px;
   }
 
 }
